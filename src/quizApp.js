@@ -59,17 +59,22 @@ const QuizApp = ()=> {
                     pt++
                     setPoint(pt)
                 }
+                let qIndex = quizIndex
+                qIndex++
+                setQuizIndex(qIndex)
     
                 document.querySelectorAll('.option-item').forEach(item =>{
                     item.classList.remove('bg-main')
                     item.classList.add('bg-transparent')
                 })
             }else {
+                if(answers[0].toLowerCase() === quizList[quizIndex].answer.toLowerCase()) {
+                    let pt = point
+                    pt++
+                    setPoint(pt)
+                }
                 setQuizDone(true)
             }
-            let qIndex = quizIndex
-            qIndex++
-            setQuizIndex(qIndex)
             setAnswers('')
         }else {
             alert('choose at lease one option please')
